@@ -1,0 +1,40 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  github.com/contra/contra-sdk (src/client.ts, contra-open-api.json), live
+  401 from https://contra.com/public-api/*, and the OAuth discovery surface
+  at https://contra.com/.well-known/*
+summary:
+  types:
+  - apiKey
+  - oauth2
+  api_key_in:
+  - header
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: PublicApiKey
+  type: apiKey
+  in: header
+  parameter: X-API-Key
+  applies_to: Contra Public API (https://contra.com/public-api/*)
+  notes: >-
+    The @contra/webflow SDK sends the key in both the X-API-Key and
+    Authorization headers. An unauthenticated request returns HTTP 401
+    {"code":"Unauthorized","message":"Missing or malformed API key"}.
+  sources:
+  - openapi/contra-openapi-original.json
+- name: McpOAuth2
+  type: oauth2
+  scheme: OAuth 2.1 authorization_code + PKCE (S256/plain)
+  applies_to: Contra MCP server (https://contra.com/mcp)
+  issuer: https://contra.com/api
+  authorization_url: https://contra.com/api/mcp/oauth/authorize
+  token_url: https://contra.com/api/mcp/oauth/token
+  registration_url: https://contra.com/api/mcp/oauth/register
+  dynamic_client_registration: true
+  scopes:
+  - mcp:tools
+  sources:
+  - well-known/contra-openid-configuration.json
+  - well-known/contra-oauth-protected-resource-mcp.json
