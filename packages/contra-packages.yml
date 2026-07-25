@@ -1,0 +1,29 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  npm registry (@contra scope) and github.com/contra/contra-sdk
+packages:
+- language: javascript
+  registry: npm
+  name: "@contra/ui-kit"
+  url: https://www.npmjs.com/package/@contra/ui-kit
+  install: npm install @contra/ui-kit
+  version: 3.2.0
+  official: true
+  description: React component library implementing Contra's Design System.
+- language: javascript
+  registry: github
+  name: "@contra/webflow"
+  url: https://github.com/contra/contra-sdk
+  cdn: https://cdn.jsdelivr.net/gh/contra/contra-sdk@v1.0.0/dist/runtime.min.js
+  install: '<script defer src="https://cdn.jsdelivr.net/gh/contra/contra-sdk@v1.0.0/dist/runtime.min.js"></script>'
+  official: true
+  description: >-
+    Attribute-driven TypeScript SDK / runtime for embedding Contra expert
+    data into Webflow sites. Wraps the Contra Public API
+    (openapi/contra-openapi-original.json). Distributed via GitHub + jsDelivr
+    CDN (not published to npm).
+notes: >-
+  Both packages are first-party (published under the @contra org / the
+  github.com/contra org, whose blog is https://contra.com). No Python, Go,
+  Ruby, Java, .NET, PHP or Rust client libraries were found.

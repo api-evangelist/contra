@@ -1,0 +1,39 @@
+generated: '2026-07-18'
+method: derived
+source: >-
+  openapi/contra-openapi-original.json and github.com/contra/contra-sdk
+  (src/client.ts)
+authentication:
+  style: api-key-header
+  header: X-API-Key
+  also_accepts: Authorization
+  reference: authentication/contra-authentication.yml
+pagination:
+  style: limit-offset
+  params:
+  - name: limit
+    in: query
+    applies_to: GET /public-api/programs/{programNid}/experts
+  - name: offset
+    in: query
+    applies_to: GET /public-api/programs/{programNid}/experts
+  notes: >-
+    The experts listing supports limit/offset paging plus filter query
+    params (available, languages, location, minRate, maxRate, sortBy).
+idempotency:
+  supported: false
+  notes: >-
+    The Public API is read-only (GET only), so no idempotency-key contract
+    applies. Do not expect an Idempotency-Key header.
+error_envelope:
+  content_type: application/json
+  shape: '{code: string, message: string}'
+  reference: errors/contra-error-codes.yml
+versioning:
+  reference: lifecycle/contra-lifecycle.yml
+rate_limiting:
+  documented: false
+notes: >-
+  Cross-cutting semantics for the Contra Public API. The API is a read-only
+  discovery surface (programs, experts, filters); write semantics and
+  idempotency do not apply.

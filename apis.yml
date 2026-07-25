@@ -1,9 +1,30 @@
 aid: contra
 name: Contra
-description: 'Contra is a company surfaced as a portfolio company of cowboy-ventures and added to the
-  API Evangelist network as a stub for enrichment. Sector: future-of-work. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Contra is an independent-first, commission-free freelance marketplace and
+  professional network for the jobs and skills of the future, founded in 2019
+  by Ben Huffman and Gajus Kuizinas and backed by Cowboy Ventures, Unusual
+  Ventures, and NEA. Independents build a portfolio, get discovered, and manage
+  work from inquiry to contract to payment without platform commissions. For
+  developers, Contra exposes a read-only Public API (programs, filters, and
+  expert profiles under https://contra.com/public-api/, authenticated with an
+  X-API-Key header), an attribute-driven Webflow SDK, a React UI-kit, and a
+  hosted, OAuth 2.1-protected Model Context Protocol (MCP) server at
+  https://contra.com/mcp (scope mcp:tools).
 url: https://raw.githubusercontent.com/api-evangelist/contra/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://contra.com/static/opengraph-assets/v2/fallbacks/contra-fallback-open-graph-image.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,11 +33,27 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Future Of Work
-apis: []
+- Freelance Marketplace
+- Talent
+- Hiring
+- Professional Network
+- Model Context Protocol
+- Developer API
+apis:
+- aid: contra:contra-public-api-api
+  name: Contra Public Api API
+  description: The Public Api API from Contra — 3 operation(s) for public api.
+  humanURL: https://github.com/contra/contra-sdk
+  baseURL: https://contra.com/public-api
+  tags:
+  - Public Api
+  properties:
+  - type: OpenAPI
+    url: openapi/contra-public-api-api-openapi.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +62,52 @@ maintainers:
 common:
 - type: Website
   url: https://contra.com
+- type: Documentation
+  url: https://github.com/contra/contra-sdk
+- type: Blog
+  url: https://contra.com/blog
+- type: Pricing
+  url: https://contra.com/pricing
+- type: SignUp
+  url: https://contra.com/sign-up
+- type: TermsOfService
+  url: https://contra.com/policies/terms
+- type: PrivacyPolicy
+  url: https://contra.com/policies/privacy
+- type: GitHubOrganization
+  url: https://github.com/contra
+- type: StatusPage
+  url: https://status.contra.com
+- type: MCPServer
+  url: mcp/contra-mcp.yml
+- type: Authentication
+  url: authentication/contra-authentication.yml
+- type: OAuthScopes
+  url: scopes/contra-scopes.yml
+- type: WellKnown
+  url: well-known/contra-well-known.yml
+- type: Packages
+  url: packages/contra-packages.yml
+- type: SDKs
+  url: packages/contra-packages.yml
+- type: Conformance
+  url: conformance/contra-conformance.yml
+- type: ErrorCatalog
+  url: errors/contra-error-codes.yml
+- type: Lifecycle
+  url: lifecycle/contra-lifecycle.yml
+- type: Conventions
+  url: conventions/contra-conventions.yml
+- type: DataModel
+  url: data-model/contra-data-model.yml
+- type: DomainSecurity
+  url: security/contra-domain-security.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/contra-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

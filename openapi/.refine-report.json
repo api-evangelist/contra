@@ -1,0 +1,14 @@
+{
+  "provider": "contra",
+  "sources": [
+    "contra-public-api-api-openapi.yml"
+  ],
+  "outputs": [
+    "contra-public-api-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

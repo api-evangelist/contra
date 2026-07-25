@@ -1,0 +1,24 @@
+generated: '2026-07-18'
+method: searched
+source: https://contra.com/.well-known/openid-configuration
+docs: https://contra.com/.well-known/oauth-protected-resource/mcp
+schemes:
+- name: McpOAuth2
+  source: well-known/contra-openid-configuration.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://contra.com/api/mcp/oauth/authorize
+    tokenUrl: https://contra.com/api/mcp/oauth/token
+scopes:
+- scope: mcp:tools
+  description: >-
+    Grants an authorized client access to invoke the tools exposed by the
+    Contra MCP server (https://contra.com/mcp).
+  flows:
+  - authorizationCode
+  sources:
+  - well-known/contra-openid-configuration.json
+notes: >-
+  The Contra Public REST API uses a static X-API-Key header (no OAuth
+  scopes). OAuth scopes here apply only to the hosted MCP server, which
+  advertises a single scope, mcp:tools.

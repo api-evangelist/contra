@@ -1,0 +1,15 @@
+generated: '2026-07-18'
+method: generated
+source: openapi/contra-openapi-original.json
+skills:
+- file: contra-find-experts.md
+  name: Find and filter experts in a Contra program
+  api: openapi/contra-openapi-original.json
+  operations:
+  - getProgram
+  - listProgramFilters
+  - listProgramExperts
+notes: >-
+  operationIds are the AE-assigned ids from
+  overlays/contra-openapi-overlay.yaml; the harvested spec ships the same
+  three GET operations without operationIds.

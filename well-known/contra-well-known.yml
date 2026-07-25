@@ -1,0 +1,31 @@
+generated: '2026-07-18'
+method: searched
+source: live fetch of https://contra.com/.well-known/*
+host: https://contra.com
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: contra-openid-configuration.json
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: contra-oauth-authorization-server.json
+- path: /.well-known/oauth-protected-resource/mcp
+  status: 200
+  file: contra-oauth-protected-resource-mcp.json
+- path: /api/.well-known/jwks.json
+  status: 200
+  file: contra-jwks.json
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+notes: >-
+  Contra publishes a full OAuth 2.1 / MCP discovery surface. The
+  authorization-server and openid-configuration documents describe the
+  authorization server for the hosted Contra MCP server (issuer
+  https://contra.com/api, scope mcp:tools, DCR + PKCE). The
+  oauth-protected-resource/mcp document (RFC 9728) points at the protected
+  MCP resource https://contra.com/mcp. jwks.json currently returns an empty
+  key set ({"keys":[]}).

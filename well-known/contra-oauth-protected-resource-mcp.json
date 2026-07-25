@@ -1,0 +1,1 @@
+{"authorization_server":"https://contra.com/api","authorization_servers":["https://contra.com/api"],"resource":"https://contra.com/mcp","resource_name":"Contra MCP","scopes_supported":["mcp:tools"]}

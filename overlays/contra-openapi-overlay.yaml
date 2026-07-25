@@ -1,0 +1,29 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Contra Public API
+  version: 1.0.0
+extends: openapi/contra-openapi-original.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-rating: 3
+    x-api-base: https://contra.com
+- target: $.servers
+  update:
+  - url: https://contra.com
+    description: >-
+      Production host (added by API Evangelist). The harvested spec ships an
+      empty servers[]; the @contra/webflow SDK defaults its baseUrl to
+      https://contra.com, with endpoints under /public-api/.
+- target: $.paths['/public-api/programs/{programNid}'].get
+  update:
+    operationId: getProgram
+    tags: [Programs]
+- target: $.paths['/public-api/programs/{programNid}/experts'].get
+  update:
+    operationId: listProgramExperts
+    tags: [Experts]
+- target: $.paths['/public-api/programs/{programNid}/filters'].get
+  update:
+    operationId: listProgramFilters
+    tags: [Programs]

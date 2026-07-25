@@ -1,0 +1,45 @@
+generated: '2026-07-18'
+method: searched
+status: published
+source: >-
+  https://contra.com/.well-known/oauth-protected-resource/mcp and the live
+  401 challenge from https://contra.com/mcp
+server:
+  name: Contra MCP
+  transport: http
+  url: https://contra.com/mcp
+  protected_resource_metadata: https://contra.com/.well-known/oauth-protected-resource/mcp
+authorization:
+  type: oauth2
+  spec: OAuth 2.1 (authorization_code + PKCE), RFC 9728 protected resource
+  issuer: https://contra.com/api
+  authorization_endpoint: https://contra.com/api/mcp/oauth/authorize
+  token_endpoint: https://contra.com/api/mcp/oauth/token
+  registration_endpoint: https://contra.com/api/mcp/oauth/register
+  introspection_endpoint: https://contra.com/api/mcp/oauth/introspect
+  jwks_uri: https://contra.com/api/.well-known/jwks.json
+  dynamic_client_registration: true
+  pkce_methods:
+  - S256
+  - plain
+  grant_types:
+  - authorization_code
+  - refresh_token
+  scopes:
+  - mcp:tools
+evidence:
+- source: https://contra.com/mcp
+  detail: >-
+    HTTP 401 with WWW-Authenticate: Bearer realm="contra-mcp",
+    scope="mcp:tools", resource_metadata="https://contra.com/.well-known/oauth-protected-resource/mcp"
+- source: https://contra.com/.well-known/oauth-protected-resource/mcp
+  detail: 'resource_name: "Contra MCP", resource: https://contra.com/mcp'
+- source: https://contra.com/api/mcp/oauth/register
+  detail: Dynamic Client Registration returns a client_id (RFC 7591 supported)
+tools: []
+notes: >-
+  Hosted, published MCP server gated behind OAuth 2.1 (scope mcp:tools). The
+  tool list is not enumerable without an authorized bearer token, so tools[]
+  is intentionally empty rather than fabricated. The Contra Public REST API
+  (openapi/contra-openapi-original.json) exposes program/expert discovery
+  operations that the MCP tools most likely surface.

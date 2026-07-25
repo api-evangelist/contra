@@ -1,0 +1,19 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  openapi/contra-openapi-original.json, https://status.contra.com, and the
+  contra-sdk release tags
+versioning:
+  scheme: title-version
+  current: '1.0.0'
+  notes: >-
+    The OpenAPI is titled "Contra Public API" version 1.0.0. Public REST
+    endpoints live under the /public-api/ path prefix. No dated or header
+    version negotiation is documented.
+status_page: https://status.contra.com
+deprecation: {}
+deprecated_operations: []
+notes: >-
+  A public status page is live at https://status.contra.com. No formal
+  deprecation policy, Sunset/Deprecation header support, or SLA document was
+  found, and no OpenAPI operations are marked deprecated.

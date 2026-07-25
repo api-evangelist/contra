@@ -1,0 +1,33 @@
+# Contra
+
+> Contra is an independent-first, commission-free freelance marketplace and professional network for the jobs and skills of the future. Its developer surface is the read-only Contra Public API (programs and experts) plus a hosted, OAuth-protected Model Context Protocol (MCP) server.
+
+## APIs
+
+- [Contra Public API (OpenAPI 3.0.3)](https://raw.githubusercontent.com/api-evangelist/contra/refs/heads/main/openapi/contra-openapi-original.json): Read-only program, filter, and expert discovery under https://contra.com/public-api/. Auth via X-API-Key header.
+- [Contra MCP server](https://contra.com/mcp): Hosted MCP server, OAuth 2.1 (scope mcp:tools), discovery at https://contra.com/.well-known/oauth-protected-resource/mcp.
+
+## Specs and artifacts
+
+- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/contra/refs/heads/main/openapi/contra-openapi-original.json)
+- [MCP manifest](https://raw.githubusercontent.com/api-evangelist/contra/refs/heads/main/mcp/contra-mcp.yml)
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/contra/refs/heads/main/authentication/contra-authentication.yml)
+- [OAuth scopes](https://raw.githubusercontent.com/api-evangelist/contra/refs/heads/main/scopes/contra-scopes.yml)
+- [Well-known index](https://raw.githubusercontent.com/api-evangelist/contra/refs/heads/main/well-known/contra-well-known.yml)
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/contra/refs/heads/main/conventions/contra-conventions.yml)
+- [Error codes](https://raw.githubusercontent.com/api-evangelist/contra/refs/heads/main/errors/contra-error-codes.yml)
+- [Data model](https://raw.githubusercontent.com/api-evangelist/contra/refs/heads/main/data-model/contra-data-model.yml)
+
+## Packages
+
+- [@contra/ui-kit (npm)](https://www.npmjs.com/package/@contra/ui-kit): React component library for Contra's Design System.
+- [contra-sdk / @contra/webflow](https://github.com/contra/contra-sdk): Attribute-driven Webflow SDK wrapping the Contra Public API.
+
+## Docs
+
+- [Contra](https://contra.com)
+- [How Contra works (independents)](https://contra.com/how-it-works/independents)
+- [Pricing](https://contra.com/pricing)
+- [Blog](https://contra.com/blog)
+- [Status](https://status.contra.com)
+- [GitHub org](https://github.com/contra)

@@ -1,0 +1,36 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/contra-openapi-original.json (components.schemas)
+entities:
+- name: ProgramSummary
+  key: id
+  fields: [id, title, subheader, logoUrl, applyUrl, hireUrl, expertsCount, totalHires, totalHireValue, totalReviews]
+- name: Filter
+  fields: [] # filter definitions for a program
+- name: ExpertProfile
+  key: id
+  fields: [id, name, oneLiner, location, available, avatarUrl, profileUrl, inquiryUrl, hourlyRateUSD, earningsUSD, averageReviewScore, reviewsCount, reviewsCount, followersCount, projectsCompletedCount, skillTags, socialLinks, emailAddress]
+- name: Project
+  fields: [title, coverUrl, projectUrl]
+- name: Review
+  fields: [author, rating, review, reviewUrl, createdAt]
+relationships:
+- from: ProgramSummary
+  to: ExpertProfile
+  type: has_many
+  via: GET /public-api/programs/{programNid}/experts
+- from: ProgramSummary
+  to: Filter
+  type: has_many
+  via: GET /public-api/programs/{programNid}/filters
+- from: ExpertProfile
+  to: Project
+  type: has_many
+  via: projects
+- from: ExpertProfile
+  to: Review
+  type: has_many
+  via: reviews
+notes: >-
+  Derived from the OpenAPI component schemas. Programs are the top-level
+  entity; experts belong to a program and embed their projects and reviews.

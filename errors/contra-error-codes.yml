@@ -1,0 +1,33 @@
+generated: '2026-07-18'
+method: derived
+source: >-
+  openapi/contra-openapi-original.json (Error schema) and observed live
+  responses from https://contra.com/public-api/*
+format: custom
+envelope:
+  content_type: application/json
+  fields:
+  - name: code
+    type: string
+    description: Machine-readable error code.
+    required: true
+  - name: message
+    type: string
+    description: Human-readable error message.
+    required: true
+  example: '{"code":"Unauthorized","message":"Missing or malformed API key"}'
+errors:
+- code: Unauthorized
+  status: 401
+  message: Missing or malformed API key
+  cause: >-
+    The X-API-Key (or Authorization) header was absent or invalid on a
+    Contra Public API request.
+  remediation: Supply a valid Contra API key in the X-API-Key header.
+  observed: true
+  source_operation: openapi/contra-openapi-original.json#/public-api/programs/{programNid}
+notes: >-
+  The OpenAPI documents a shared Error schema ({code, message}) but does not
+  enumerate 4xx/5xx responses per operation. The 401 above was observed live.
+  Other codes (e.g. 404 for an unknown programNid) are implied by the Error
+  schema but not published, so they are not fabricated here.
