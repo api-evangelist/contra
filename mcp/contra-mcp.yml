@@ -1,9 +1,7 @@
 generated: '2026-07-18'
 method: searched
 status: published
-source: >-
-  https://contra.com/.well-known/oauth-protected-resource/mcp and the live
-  401 challenge from https://contra.com/mcp
+source: https://contra.com/.well-known/oauth-protected-resource/mcp and the live 401 challenge from https://contra.com/mcp
 server:
   name: Contra MCP
   transport: http
@@ -29,17 +27,20 @@ authorization:
   - mcp:tools
 evidence:
 - source: https://contra.com/mcp
-  detail: >-
-    HTTP 401 with WWW-Authenticate: Bearer realm="contra-mcp",
-    scope="mcp:tools", resource_metadata="https://contra.com/.well-known/oauth-protected-resource/mcp"
+  detail: 'HTTP 401 with WWW-Authenticate: Bearer realm="contra-mcp", scope="mcp:tools", resource_metadata="https://contra.com/.well-known/oauth-protected-resource/mcp"'
 - source: https://contra.com/.well-known/oauth-protected-resource/mcp
   detail: 'resource_name: "Contra MCP", resource: https://contra.com/mcp'
 - source: https://contra.com/api/mcp/oauth/register
   detail: Dynamic Client Registration returns a client_id (RFC 7591 supported)
 tools: []
-notes: >-
-  Hosted, published MCP server gated behind OAuth 2.1 (scope mcp:tools). The
-  tool list is not enumerable without an authorized bearer token, so tools[]
-  is intentionally empty rather than fabricated. The Contra Public REST API
-  (openapi/contra-openapi-original.json) exposes program/expert discovery
-  operations that the MCP tools most likely surface.
+notes: Hosted, published MCP server gated behind OAuth 2.1 (scope mcp:tools). The tool list is not enumerable
+  without an authorized bearer token, so tools[] is intentionally empty rather than fabricated. The Contra
+  Public REST API (openapi/contra-openapi-original.json) exposes program/expert discovery operations that
+  the MCP tools most likely surface.
+deployment:
+  mode: remote
+  endpoint: https://contra.com/mcp
+  verified: probed
+  probe: gated
+  checked: '2026-08-12'
+  source: catalog MCP census
