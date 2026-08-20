@@ -41,6 +41,15 @@ tags:
 - Talent
 - Hiring
 - Professional Network
+- MCP
+- Developer API
+tags_raw:
+- Company
+- Future Of Work
+- Freelance Marketplace
+- Talent
+- Hiring
+- Professional Network
 - Model Context Protocol
 - Developer API
 apis:
@@ -50,6 +59,8 @@ apis:
   humanURL: https://github.com/contra/contra-sdk
   baseURL: https://contra.com/public-api
   tags:
+  - Public API
+  tags_raw:
   - Public Api
   properties:
   - type: OpenAPI
