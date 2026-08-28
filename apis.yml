@@ -12,6 +12,18 @@ description: >-
   hosted, OAuth 2.1-protected Model Context Protocol (MCP) server at
   https://contra.com/mcp (scope mcp:tools).
 url: https://raw.githubusercontent.com/api-evangelist/contra/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
