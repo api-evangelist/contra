@@ -1,16 +1,12 @@
 aid: contra
 name: Contra
-description: >-
-  Contra is an independent-first, commission-free freelance marketplace and
-  professional network for the jobs and skills of the future, founded in 2019
-  by Ben Huffman and Gajus Kuizinas and backed by Cowboy Ventures, Unusual
-  Ventures, and NEA. Independents build a portfolio, get discovered, and manage
-  work from inquiry to contract to payment without platform commissions. For
-  developers, Contra exposes a read-only Public API (programs, filters, and
-  expert profiles under https://contra.com/public-api/, authenticated with an
-  X-API-Key header), an attribute-driven Webflow SDK, a React UI-kit, and a
-  hosted, OAuth 2.1-protected Model Context Protocol (MCP) server at
-  https://contra.com/mcp (scope mcp:tools).
+description: Contra is an independent-first, commission-free freelance marketplace and professional network
+  for the jobs and skills of the future, founded in 2019 by Ben Huffman and Gajus Kuizinas and backed
+  by Cowboy Ventures, Unusual Ventures, and NEA. Independents build a portfolio, get discovered, and manage
+  work from inquiry to contract to payment without platform commissions. For developers, Contra exposes
+  a read-only Public API (programs, filters, and expert profiles under https://contra.com/public-api/,
+  authenticated with an X-API-Key header), an attribute-driven Webflow SDK, a React UI-kit, and a hosted,
+  OAuth 2.1-protected Model Context Protocol (MCP) server at https://contra.com/mcp (scope mcp:tools).
 url: https://raw.githubusercontent.com/api-evangelist/contra/refs/heads/main/apis.yml
 deliveryModel:
   model: saas
@@ -45,7 +41,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-09-16'
 tags:
 - Company
 - Future Of Work
@@ -66,7 +62,7 @@ tags_raw:
 - Developer API
 apis:
 - aid: contra:contra-public-api-api
-  name: Contra Public Api API
+  name: Contra Public Api
   description: The Public Api API from Contra — 3 operation(s) for public api.
   humanURL: https://github.com/contra/contra-sdk
   baseURL: https://contra.com/public-api
