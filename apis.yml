@@ -67,7 +67,7 @@ apis:
   humanURL: https://github.com/contra/contra-sdk
   baseURL: https://contra.com/public-api
   tags:
-  - Public API
+  - Public APIs
   tags_raw:
   - Public Api
   properties:
