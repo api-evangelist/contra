@@ -1,10 +1,10 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   description: API for accessing Contra program and expert data. All endpoints require authentication using an API key.
-  title: Contra Public Public Api API
+  title: Contra Public Public API
   version: 1.0.0
 tags:
-- name: Public Api
+- name: Public API
 paths:
   /public-api/programs/{programNid}/filters:
     get:
@@ -86,7 +86,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/FilterListResponse'
       tags:
-      - Public Api
+      - Public API
+      summary: Get public api programs by program nid filters
+      x-summary-source: derived
+      operationId: getPublicApiProgramsByProgramNidFilters
+      x-operation-id-source: derived
   /public-api/programs/{programNid}:
     get:
       parameters:
@@ -118,7 +122,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProgramSummaryResponse'
       tags:
-      - Public Api
+      - Public API
+      summary: Get public api programs by program nid
+      x-summary-source: derived
+      operationId: getPublicApiProgramsByProgramNid
+      x-operation-id-source: derived
   /public-api/programs/{programNid}/experts:
     get:
       parameters:
@@ -284,57 +292,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/ExpertProfileList'
       tags:
-      - Public Api
+      - Public API
+      summary: Get public api programs by program nid experts
+      x-summary-source: derived
+      operationId: getPublicApiProgramsByProgramNidExperts
+      x-operation-id-source: derived
 components:
   schemas:
-    ProgramSummary:
-      type: object
-      nullable: true
-      properties:
-        applyUrl:
-          type: string
-          format: uri
-          description: URL for experts to apply
-        expertsCount:
-          type: integer
-          description: Number of experts in the program
-        hireUrl:
-          type: string
-          format: uri
-          description: URL where clients can hire experts
-        id:
-          type: string
-          description: Expert program identifier
-        logoUrl:
-          type: string
-          format: uri
-          description: URL to program logo image
-        subheader:
-          type: string
-          description: Short description or tagline
-        title:
-          type: string
-          description: Program title
-        totalHires:
-          type: integer
-          description: Total number of hires
-        totalHireValue:
-          type: number
-          description: Cumulative value of all hires (USD)
-        totalReviews:
-          type: integer
-          description: Total reviews received by program experts
-      required:
-      - applyUrl
-      - expertsCount
-      - hireUrl
-      - id
-      - logoUrl
-      - subheader
-      - title
-      - totalHires
-      - totalHireValue
-      - totalReviews
     ExpertProfile:
       type: object
       properties:
@@ -352,16 +316,18 @@ components:
           type: number
           description: Total earnings on Contra (USD)
         emailAddress:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           format: email
           description: Normalized email address (if permitted)
         followersCount:
           type: integer
           description: Followers count
         hourlyRateUSD:
-          type: number
-          nullable: true
+          type:
+          - number
+          - 'null'
           description: Rate per hour in USD
         id:
           type: string
@@ -426,8 +392,9 @@ components:
             type: object
             properties:
               label:
-                type: string
-                nullable: true
+                type:
+                - string
+                - 'null'
                 description: Social platform
               url:
                 type: string
@@ -471,12 +438,14 @@ components:
               format: uri
               description: Author profile URL
             companyName:
-              type: string
-              nullable: true
+              type:
+              - string
+              - 'null'
               description: Author company name
             companyProfileUrl:
-              type: string
-              nullable: true
+              type:
+              - string
+              - 'null'
               format: uri
               description: Author company profile URL
           required:
@@ -491,8 +460,9 @@ components:
           type: number
           description: Review rating
         review:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: Review text
         reviewUrl:
           type: string
@@ -504,15 +474,55 @@ components:
       - rating
       - review
       - reviewUrl
-    FilterListResponse:
-      type: object
+    ProgramSummary:
+      type:
+      - object
+      - 'null'
       properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Filter'
+        applyUrl:
+          type: string
+          format: uri
+          description: URL for experts to apply
+        expertsCount:
+          type: integer
+          description: Number of experts in the program
+        hireUrl:
+          type: string
+          format: uri
+          description: URL where clients can hire experts
+        id:
+          type: string
+          description: Expert program identifier
+        logoUrl:
+          type: string
+          format: uri
+          description: URL to program logo image
+        subheader:
+          type: string
+          description: Short description or tagline
+        title:
+          type: string
+          description: Program title
+        totalHires:
+          type: integer
+          description: Total number of hires
+        totalHireValue:
+          type: number
+          description: Cumulative value of all hires (USD)
+        totalReviews:
+          type: integer
+          description: Total reviews received by program experts
       required:
-      - data
+      - applyUrl
+      - expertsCount
+      - hireUrl
+      - id
+      - logoUrl
+      - subheader
+      - title
+      - totalHires
+      - totalHireValue
+      - totalReviews
     ExpertProfileList:
       type: object
       properties:
@@ -532,6 +542,15 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/ProgramSummary'
+      required:
+      - data
+    FilterListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Filter'
       required:
       - data
     Filter:
