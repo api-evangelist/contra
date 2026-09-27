@@ -299,6 +299,62 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    ProgramSummary:
+      type:
+      - object
+      - 'null'
+      properties:
+        applyUrl:
+          type: string
+          format: uri
+          description: URL for experts to apply
+        expertsCount:
+          type: integer
+          description: Number of experts in the program
+        hireUrl:
+          type: string
+          format: uri
+          description: URL where clients can hire experts
+        id:
+          type: string
+          description: Expert program identifier
+        logoUrl:
+          type: string
+          format: uri
+          description: URL to program logo image
+        subheader:
+          type: string
+          description: Short description or tagline
+        title:
+          type: string
+          description: Program title
+        totalHires:
+          type: integer
+          description: Total number of hires
+        totalHireValue:
+          type: number
+          description: Cumulative value of all hires (USD)
+        totalReviews:
+          type: integer
+          description: Total reviews received by program experts
+      required:
+      - applyUrl
+      - expertsCount
+      - hireUrl
+      - id
+      - logoUrl
+      - subheader
+      - title
+      - totalHires
+      - totalHireValue
+      - totalReviews
+    ProgramSummaryResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/ProgramSummary'
+      required:
+      - data
     ExpertProfile:
       type: object
       properties:
@@ -474,55 +530,6 @@ components:
       - rating
       - review
       - reviewUrl
-    ProgramSummary:
-      type:
-      - object
-      - 'null'
-      properties:
-        applyUrl:
-          type: string
-          format: uri
-          description: URL for experts to apply
-        expertsCount:
-          type: integer
-          description: Number of experts in the program
-        hireUrl:
-          type: string
-          format: uri
-          description: URL where clients can hire experts
-        id:
-          type: string
-          description: Expert program identifier
-        logoUrl:
-          type: string
-          format: uri
-          description: URL to program logo image
-        subheader:
-          type: string
-          description: Short description or tagline
-        title:
-          type: string
-          description: Program title
-        totalHires:
-          type: integer
-          description: Total number of hires
-        totalHireValue:
-          type: number
-          description: Cumulative value of all hires (USD)
-        totalReviews:
-          type: integer
-          description: Total reviews received by program experts
-      required:
-      - applyUrl
-      - expertsCount
-      - hireUrl
-      - id
-      - logoUrl
-      - subheader
-      - title
-      - totalHires
-      - totalHireValue
-      - totalReviews
     ExpertProfileList:
       type: object
       properties:
@@ -537,13 +544,6 @@ components:
       required:
       - data
       - totalCount
-    ProgramSummaryResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/ProgramSummary'
-      required:
-      - data
     FilterListResponse:
       type: object
       properties:
