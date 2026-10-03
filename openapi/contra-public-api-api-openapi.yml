@@ -299,62 +299,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    ProgramSummary:
-      type:
-      - object
-      - 'null'
-      properties:
-        applyUrl:
-          type: string
-          format: uri
-          description: URL for experts to apply
-        expertsCount:
-          type: integer
-          description: Number of experts in the program
-        hireUrl:
-          type: string
-          format: uri
-          description: URL where clients can hire experts
-        id:
-          type: string
-          description: Expert program identifier
-        logoUrl:
-          type: string
-          format: uri
-          description: URL to program logo image
-        subheader:
-          type: string
-          description: Short description or tagline
-        title:
-          type: string
-          description: Program title
-        totalHires:
-          type: integer
-          description: Total number of hires
-        totalHireValue:
-          type: number
-          description: Cumulative value of all hires (USD)
-        totalReviews:
-          type: integer
-          description: Total reviews received by program experts
-      required:
-      - applyUrl
-      - expertsCount
-      - hireUrl
-      - id
-      - logoUrl
-      - subheader
-      - title
-      - totalHires
-      - totalHireValue
-      - totalReviews
-    ProgramSummaryResponse:
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/ProgramSummary'
-      required:
-      - data
     ExpertProfile:
       type: object
       properties:
@@ -480,6 +424,62 @@ components:
       - reviewsCount
       - skillTags
       - socialLinks
+    ProgramSummary:
+      type:
+      - object
+      - 'null'
+      properties:
+        applyUrl:
+          type: string
+          format: uri
+          description: URL for experts to apply
+        expertsCount:
+          type: integer
+          description: Number of experts in the program
+        hireUrl:
+          type: string
+          format: uri
+          description: URL where clients can hire experts
+        id:
+          type: string
+          description: Expert program identifier
+        logoUrl:
+          type: string
+          format: uri
+          description: URL to program logo image
+        subheader:
+          type: string
+          description: Short description or tagline
+        title:
+          type: string
+          description: Program title
+        totalHires:
+          type: integer
+          description: Total number of hires
+        totalHireValue:
+          type: number
+          description: Cumulative value of all hires (USD)
+        totalReviews:
+          type: integer
+          description: Total reviews received by program experts
+      required:
+      - applyUrl
+      - expertsCount
+      - hireUrl
+      - id
+      - logoUrl
+      - subheader
+      - title
+      - totalHires
+      - totalHireValue
+      - totalReviews
+    ProgramSummaryResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/ProgramSummary'
+      required:
+      - data
     Review:
       type: object
       properties:
@@ -530,29 +530,6 @@ components:
       - rating
       - review
       - reviewUrl
-    ExpertProfileList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/ExpertProfile'
-          description: Array of expert profiles
-        totalCount:
-          type: integer
-          description: Total number of expert profiles
-      required:
-      - data
-      - totalCount
-    FilterListResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Filter'
-      required:
-      - data
     Filter:
       type: object
       properties:
@@ -630,3 +607,26 @@ components:
         minimum: 0
         name: offset
         type: number
+    FilterListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Filter'
+      required:
+      - data
+    ExpertProfileList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExpertProfile'
+          description: Array of expert profiles
+        totalCount:
+          type: integer
+          description: Total number of expert profiles
+      required:
+      - data
+      - totalCount
