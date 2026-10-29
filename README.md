@@ -64,6 +64,118 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Contra is a company surfaced as a portfolio company of cowboy-ventures and added to the API Evangelist network as a stub for enrichment. Sector: future-of-work. This profile is a lead awaiting the enrichment pipeline.
+Contra is an independent-first, commission-free freelance marketplace and professional network for the jobs and skills of the future, founded in 2019 by Ben Huffman and Gajus Kuizinas and backed by Cowboy Ventures, Unusual Ventures, and NEA. Independents build a portfolio, get discovered, and manage work from inquiry to contract to payment without platform commissions. For developers, Contra exposes a read-only Public API (programs, filters, and expert profiles under https://contra.com/public-api/, authenticated with an X-API-Key header), an attribute-driven Webflow SDK, a React UI-kit, and a hosted, OAuth 2.1-protected Model Context Protocol (MCP) server at https://contra.com/mcp (scope mcp:tools).
 
-Backed by: cowboy-ventures — https://contra.com
+**Areas:** Company · Future Of Work · Freelance Marketplace · Talent · Hiring · Professional Network · MCP · Developer API
+
+## Contra on APIs.io
+
+Everything profiled for Contra is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/contra/](https://apis.io/providers/contra/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Contra Public Api](https://apis.io/apis/contra/contra-public-api-api/) — The Public Api API from Contra — 3 operation(s) for public api.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [Contra MCP](https://apis.io/servers/contra/contra-mcp/)
+
+#### Collections (1)
+
+Postman and Open Collection request collections.
+
+- [Contra Public Public Api API](https://apis.io/collections/contra/open-contra-public-api-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Contra Openapi Overlay](https://apis.io/overlays/contra/contra-openapi-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Contra Authentication](https://apis.io/security/contra/contra-authentication/)
+- [Contra Domain Security](https://apis.io/security/contra/contra-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Contra Scopes](https://apis.io/scopes/contra/contra-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://contra.com)
+- [Documentation](https://github.com/contra/contra-sdk)
+- [Pricing](https://contra.com/pricing)
+- [Sign up](https://contra.com/sign-up)
+- [Blog](https://contra.com/blog)
+- [Terms of service](https://contra.com/policies/terms)
+- [Privacy policy](https://contra.com/policies/privacy)
+- [GitHub](https://github.com/contra)
+- [Status](https://status.contra.com)
+
+## API Evangelist rating
+
+**Kin Score 39.6** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 36.7 |
+| Contract governance | 18.2 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 32.7 |
+| Access clarity | 44.7 |
+
+**Agent readiness 55.3** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | na |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | na |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 34.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/contra/](https://apis.io/providers/contra/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Contra: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/contra/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
